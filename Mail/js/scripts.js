@@ -47,7 +47,7 @@ else{
 
 
 
- /* //metodo 2 ottimale
+  //metodo 2 ottimale
 let messaggio = 'la tua email non è autorizzata';
 for(let i = 0 ; i < emailList.length ; i++ ){
     //console.log(i);   //debug
@@ -61,7 +61,7 @@ for(let i = 0 ; i < emailList.length ; i++ ){
 //console.log('fuori for',emailList[i]);   //debug
 console.log('messaggio finale',messaggio);
 alert(messaggio);
-*/
+
 
 
 
