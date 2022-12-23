@@ -1,23 +1,59 @@
-console.log('int ok')
+//console.log('int ok') //debug
 
 const emailList = ['bello','prova','gino@email.it','alice@email.it','giorgio@email.it','roberto@email.it','ciao'];
-let emailInput = prompt('Inserisci la tua email');
+//let emailInput = prompt('Inserisci la tua email');
 let messaggio;
 const inputEmail = document.getElementById('input-email');
-console.log('inputEmail',inputEmail, typeof inputEmail);
+//console.log('inputEmail',inputEmail.value, typeof inputEmail.value);    //debug
+let emailInput;
+const buttonSubmit = document.getElementById('button-submit')
 
- //metodo 1 non ottimale
-for(let i = 0 ; i < emailList.length ; i++ ){
+/*
+buttonSubmit.addEventListener('click',  //metodo 1 non ottimale
 
-    if(emailInput == emailList[i]){
-        messaggio = 'la tua email è stata verificata con successo';
-        i = emailList.length;
+    function(){
+        emailInput = inputEmail.value;
+        //console.log('emailInput',emailInput, typeof emailInput);  //debug
+         //metodo 1 non ottimale
+        for(let i = 0 ; i < emailList.length ; i++ ){
+            //console.log(emailList[i])   //debug
+            if(emailInput == emailList[i]){
+                messaggio = 'la tua email è stata verificata con successo';
+                i = emailList.length;
+            }
+            else if(emailInput != emailList[i]){        //funziona anche con solo else, ma per sicurezza mantengo else if con la condizione
+                messaggio = 'la tua email non è autorizzata';
+
+            }
+        }
+        console.log('messaggio finale',messaggio);
+        alert(messaggio);
     }
-    else if(emailInput != emailList[i]){        //funziona anche con solo else, ma per sicurezza mantengo else if con la condizione
+
+)
+*/
+
+buttonSubmit.addEventListener('click',
+
+    function(){
+        emailInput = inputEmail.value;
+        //metodo 2 ottimale
         messaggio = 'la tua email non è autorizzata';
+        for(let i = 0 ; i < emailList.length ; i++ ){
+            //console.log(i);   //debug
+            //console.log(emailList[i]);   //debug
+            if(emailInput == emailList[i]){
+                messaggio = 'la tua email è stata verificata con successo';
+                //console.log(messaggio);   //debug
+                //console.log('messaggio finale',messaggio);   //debug
+            }
+        }
+        //console.log('fuori for',emailList[i]);   //debug
+        console.log('messaggio finale:',messaggio);
+        alert(messaggio);
 
     }
-}
-console.log('messaggio finale',messaggio);
-alert(messaggio);
+)
+
+
 
